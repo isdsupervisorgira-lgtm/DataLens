@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DataLens.Models.AQIData>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>AQI Data</h1>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>StnCode</th>
+            <th>Dtl_Date</th>
+            <th>Testing_Time</th>
+            <th>SO2</th>
+            <th>NOx</th>
+            <th>CO</th>
+            <th>PM2_5</th>
+            <th>PM10</th>
+            <th>Wind_Speed</th>
+            <th>Wind_Direction</th>
+            <th>Ambient_Temperature</th>
+            <th>Relative_Humidity</th>
+            <th>Rain_Fall</th>
+            <th>Solar_Radiation</th>
+            <th>Atmospheric_Pressure</th>
+           
+                   </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StnCode</td>
+                <td>@item.Dtl_Date</td>
+                <td>@item.Testing_Time</td>
+                <td>@item.SO2</td>
+                <td>@item.NOx</td>
+                <td>@item.PM10</td>
+                <td>@item.PM2_5</td>
+                <td>@item.Wind_Speed</td>
+                <td>@item.Wind_Direction</td>
+                <td>@item.Ambient_Temperature</td>
+                <td>@item.Relative_Humidity</td>
+                <td>@item.Solar_Radiation</td>
+                <td>@item.Atmospheric_Pressure</td>
+                <td>@item.Ambient_Temperature</td>
+                
+            </tr>
+        }
+
+    </tbody>
+
+</table>
