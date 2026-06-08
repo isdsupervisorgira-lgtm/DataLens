@@ -1,0 +1,155 @@
+﻿@model DataLens.Models.AQIData
+
+<h1>Delete Data</h1>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <form asp-action="Create">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter SO2
+                </label>
+
+                <input asp-for="SO2"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter NOX
+                </label>
+
+                <input asp-for="NOx"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter CO
+                </label>
+
+                <input asp-for="CO"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter PM2_5
+                </label>
+
+                <input asp-for="PM2_5"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter PM10
+                </label>
+
+                <input asp-for="PM10"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter Wind Speed
+                </label>
+
+                <input asp-for="Wind_Speed"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter Wind Direction
+                </label>
+
+                <input asp-for="Wind_Direction"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter Ambient Temperature
+                </label>
+
+                <input asp-for="Ambient_Temperature"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter Relative Humidity
+                </label>
+
+                <input asp-for="Relative_Humidity"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter Rain Fall
+                </label>
+
+                <input asp-for="Rain_Fall"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter Solar Radiation
+                </label>
+
+                <input asp-for="Solar_Radiation"
+                       class="form-control" />
+
+            </div>
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Enter Atmospheric Presuure
+                </label>
+
+                <input asp-for="Atmospheric_Pressure"
+                       class="form-control" />
+
+            </div>
+            <button type="submit"
+                    class="btn btn-primary">
+
+                Save Data
+
+            </button>
+
+            <a asp-action="Index"
+                   class="btn btn-secondary">
+
+                Back
+
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+

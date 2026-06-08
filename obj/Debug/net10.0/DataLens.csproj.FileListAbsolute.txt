@@ -297,3 +297,4 @@ E:\Gira\DataLens\obj\Debug\net10.0\refint\DataLens.dll
 E:\Gira\DataLens\obj\Debug\net10.0\DataLens.pdb
 E:\Gira\DataLens\obj\Debug\net10.0\DataLens.genruntimeconfig.cache
 E:\Gira\DataLens\obj\Debug\net10.0\ref\DataLens.dll
+E:\Gira\DataLens\obj\Debug\net10.0\DataLens.sourcelink.json

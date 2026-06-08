@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataLens")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+346a77e8bfce90ac240342dab7f414c667dd97b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataLens")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataLens")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DataLens.Data;
+using DataLens.Models;
 namespace DataLens.Controllers
 {
     public class AQIHourlyDataController : Controller
@@ -12,85 +13,138 @@ namespace DataLens.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult>Index()
+        public async Task<IActionResult> Index()
         {
-            var AQIData = await _context.AQIHourlyData.ToListAsync();               
+            var AQIData = await _context.AQIHourlyData.ToListAsync();
 
             return View(AQIData);
 
         }
-
-
-        // GET: AQIHourlyData/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: AQIHourlyData/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: AQIHourlyData/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+
+        public async Task<IActionResult> Create(AQIData aqidata)
         {
-            try
+            if (ModelState.IsValid)
             {
+                _context.Add(aqidata);
+
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(aqidata);
         }
+        [HttpGet("Details")]
+        /* public async Task<IActionResult> Details(int id)
+         {
+             var data = await _context.AQIHourlyData.FindAsync(id);
+             if (data == null)
+                 return NotFound();
+             return View(data);
+         }*/
+        
 
 
-
-
-        // GET: AQIHourlyData/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var aqidata=
+                await _context.AQIHourlyData
+                .FirstOrDefaultAsync(
+                    m => m.Id == id);
+
+            if (aqidata == null)
+            {
+                return NotFound();
+            }
+
+            return View(aqidata);
         }
 
-        // POST: AQIHourlyData/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var employee = await _context.AQIHourlyData.FindAsync(id);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return View(employee);
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+
+        public async Task<IActionResult> Edit(int id, AQIData aqidata)
         {
-            try
+            if (id != aqidata.Id)
             {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(aqidata);
+
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: AQIHourlyData/Delete/5
-        public ActionResult Delete(int id)
+            return View(aqidata);
+        }
+        public async Task<IActionResult> Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var aqidata = await _context.AQIHourlyData
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (aqidata == null)
+            {
+                return NotFound();
+            }
+            return View(aqidata);
         }
+        [HttpPost, ActionName("Delete")]
 
-        // POST: AQIHourlyData/Delete/5
-        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            try
+            var employee = await _context.AQIHourlyData.FindAsync(id);
+
+            if (employee != null)
             {
-                return RedirectToAction(nameof(Index));
+                _context.AQIHourlyData.Remove(employee);
+
+                await _context.SaveChangesAsync();
             }
-            catch
-            {
-                return View();
-            }
+
+            return RedirectToAction(nameof(Index));
         }
+        
+
+
+
+
     }
 }

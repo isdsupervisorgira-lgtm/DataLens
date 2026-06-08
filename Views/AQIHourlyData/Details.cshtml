@@ -1,0 +1,26 @@
+﻿@model DataLens.Models.AQIData
+<h2>AQI Data Details</h2>
+
+<div class="card" style="max-width: 700px;">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr><th>Station Code</th><td>@Model.StnCode</td></tr>
+            <tr><th>Date</th><td>@Model.Dtl_Date</td></tr>
+            <tr><th>Testing Time</th><td>@Model.Testing_Time</td></tr>
+            <tr><th>SO2</th><td>@Model.SO2</td></tr>
+            <tr><th>NOx</th><td>@Model.NOx</td></tr>
+            <tr><th>CO</th><td>@Model.CO</td></tr>
+            <tr><th>PM2.5</th><td>@Model.PM2_5</td></tr>
+            <tr><th>PM10</th><td>@Model.PM10</td></tr>
+            <tr><th>Wind Speed</th><td>@Model.Wind_Speed</td></tr>
+            <tr><th>Wind Direction</th><td>@Model.Wind_Direction</td></tr>
+            <tr><th>Ambient Temperature</th><td>@Model.Ambient_Temperature</td></tr>
+            <tr><th>Relative Humidity</th><td>@Model.Relative_Humidity</td></tr>
+            <tr><th>Rain Fall</th><td>@Model.Rain_Fall</td></tr>
+            <tr><th>Solar Radiation</th><td>@Model.Solar_Radiation</td></tr>
+            <tr><th>Atmospheric Pressure</th><td>@Model.Atmospheric_Pressure</td></tr>
+        </table>
+    </div>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">← Back to List</a>
